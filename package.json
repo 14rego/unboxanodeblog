@@ -1,0 +1,27 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "Node Blog for Unboxable",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/14rego/unboxanodeblog.git"
+  },
+  "keywords": [
+    "node",
+    "blog",
+    "unbox",
+    "regan",
+    "leah",
+    "bourland"
+  ],
+  "author": "Regan Leah Bourland",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/14rego/unboxanodeblog#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
