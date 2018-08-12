@@ -73,3 +73,5 @@ dll/
 blog/node_modules
 blog/conf
 conf
+
+/resources/lib/*

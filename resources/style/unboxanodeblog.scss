@@ -1,0 +1,53 @@
+@import "../lib/bootstrap-4.1.1/scss/bootstrap.scss";
+
+@import '../lib/theme-public/css/vendor/animate.scss';
+@import '../lib/theme-public/css/vendor/default-skin';
+@import '../lib/theme-public/scss/_custom-settings';
+@import '../lib/theme-public/scss/style.scss';
+
+/*
+@include media-breakpoint-up(xs)
+@include media-breakpoint-down(xs)
+@include media-breakpoint-only(xs)
+
+$primary:       #ff5722; orange
+$secondary:     #006064; teal
+*/
+
+
+// Other useful vars
+$height-header: 50px;
+$padding-sidebar: 20px;
+$border-sidebar: 1px;
+
+.hiding {
+	display: none;	
+}
+.showing {
+	display: block;
+}
+
+.error-msg {
+	color: red;
+}
+
+
+html, body {
+	background: #00363a;
+}
+img {
+	max-width: 100%;
+}
+.unbox-slider .slides {
+	margin: 0;
+	padding: 0;
+}
+.unbox-social .blink a {
+	color: white;
+}
+.material-icons {
+    vertical-align: text-top;
+}
+*.hl-primary {
+	color: $primary;
+}
