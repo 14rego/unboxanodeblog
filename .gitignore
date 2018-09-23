@@ -75,3 +75,5 @@ blog/conf
 conf
 
 /resources/lib/*
+resources/script/min
+views/dist

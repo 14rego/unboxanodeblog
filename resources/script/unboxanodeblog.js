@@ -1,14 +1,4 @@
-var urlParams = new URLSearchParams(window.location.search),
-	qelm = urlParams.get('l'),
-	qmsg = urlParams.get('m');
 var idPage = $('body').attr('id');
-//?post=1234&action=edit
-//console.log(urlParams.has('post')); // true
-//console.log(urlParams.get('action')); // "edit"
-//console.log(urlParams.getAll('action')); // ["edit"]
-//console.log(urlParams.toString()); // "?post=1234&action=edit"
-//console.log(urlParams.append('active', '1')); // "?post=1234&action=edit&active=1"
-
 $(function(){
 	$('.unbox-nav li.'+idPage).addClass('active');
 	$('#btnSubmit').on('click',function(event){
@@ -66,4 +56,53 @@ function getCookie(name) {
 }
 function eraseCookie(name) {   
     document.cookie = name+'=; Max-Age=-99999999;';  
+}
+///* BLOG POSTS *///
+var posts = [{
+    "id": "#TBD",
+    "title": "Under Construction",
+    "body": "<p>I&rsquo;m in the process of a data migration from my old blog to this fancy new one. Come back soon?</p>",
+    "created": "2018-09-10 00:00:00",
+    "tags": "data, migration, upgrade",
+    "status": "1",
+    "modified": "2018-09-10 09:13:01"
+}];
+function listPosts(posts, tag){
+	var fullList = '',
+		postLimit = 15,
+		postCount = 1,
+		template = $('.blog-fill').html();
+	for (i = (posts.length - 1); i >= 0; i--){
+		var postHasTag = false, // set flag for later
+			tempHTML = template, // get HTML template
+			repUrl = tempHTML.replace('[url]', '/blog/post/'+posts[i].id+'-'+posts[i].title.toLowerCase().replace(/[^0-9a-z-]/g,'-')),
+			repTitle = repUrl.replace('[title]', posts[i].title),
+			tempDate = new Date(posts[i].created),
+			repDate = repTitle.replace('[date]', months[tempDate.getMonth()]+' '+tempDate.getDay()+', '+tempDate.getFullYear()),
+			tagArr = posts[i].tags.toString().replace(' ','').split(','),
+			tagString = '',
+			postText = posts[i].body.replace(/<(?:.|\n)*?>/gm, ''),
+			tempIntro;
+		if (postText.length > 250) {
+			tempIntro = postText.substr(0, 250).trim() + '&hellip;';
+		} else {
+			tempIntro = postText;
+		}
+		var repIntro = repDate.replace('[intro]', tempIntro),
+			repBody = repIntro.replace('[body]', posts[i].body);
+		for (j = 0; j < tagArr.length; j++){
+			if (tagArr[j].length > 1) {
+				if (tagArr[j].toLowerCase() === tag.toLowerCase() || tag.toLowerCase() == 'all') {
+					postHasTag = true;
+				}
+				tagString += '<a href="/blog/tag/'+tagArr[j]+'" class="badge badge-pill badge-secondary"> '+tagArr[j]+'</a> ';
+			}
+		}
+		var repTags = repBody.replace('[tags]', tagString);
+		if (postHasTag == true && postCount <= 15) {
+			fullList += repTags;
+			postCount++;
+		}
+	}
+	$('.blog-fill').html(fullList);
 }

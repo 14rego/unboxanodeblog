@@ -9,11 +9,12 @@ var gulp        = require('gulp'),
     template    = require('gulp-template-html');
     
 var defaultTasks = [
-	//'before-js',
+	'vendor-js',
+	'before-js',
 	'after-js',
 	'sass',
 	'html-build-public',
-	//'html-build-auth'
+	'html-build-auth'
 ];
 
 require('gulp-help')(gulp, {
@@ -23,8 +24,8 @@ require('gulp-help')(gulp, {
 gulp.task('before-js', 'Concat, Uglify JavaScript into a single JS for the HEAD.', function() {
     gulp.src([
     		'resources/lib/theme-public/js/vendor/html5shiv.min.js',
-    		'resources/lib/theme-public/js/vendor/respond.min.js',
-    	])
+    		'resources/lib/theme-public/js/vendor/respond.min.js'
+       	])
         .pipe(concat('unboxanodeblog'))
         .pipe(uglify())
         .on('error', notify.onError('Error: <%= error.message %>'))
@@ -35,10 +36,11 @@ gulp.task('before-js', 'Concat, Uglify JavaScript into a single JS for the HEAD.
         .pipe(notify('JS IE ( ' + moment().format('h:mm:ss') + ' )'));
 	gulp.src([
 	    	'resources/lib/theme-public/js/vendor/jquery.min.js',
+			'resources/script/unboxanodeblog.head.js'
 			//'resources/lib/bootstrap-4.1.1/js/src/jquery-migrate-3.0.0.min.js', 
 		])
 	    .pipe(concat('unboxanodeblog'))
-	    .pipe(uglify())
+	    //.pipe(uglify())
 	    .on('error', notify.onError('Error: <%= error.message %>'))
 	    .pipe(rename({
 	        extname: '.head.min.js'
@@ -47,7 +49,7 @@ gulp.task('before-js', 'Concat, Uglify JavaScript into a single JS for the HEAD.
 	    .pipe(notify('JS Head ( ' + moment().format('h:mm:ss') + ' )'));
 });
 
-gulp.task('after-js', 'Concat, Uglify JavaScript into a single JS.', function() {
+gulp.task('vendor-js', 'Concat, Uglify JavaScript into a single JS.', function() {
     gulp.src([
     		'resources/lib/angular2.sfx.dev.js', 
 			'resources/lib/theme-public/js/vendor/jquery.easing.1.3.js',
@@ -72,6 +74,9 @@ gulp.task('after-js', 'Concat, Uglify JavaScript into a single JS.', function() 
          }))
         .pipe(gulp.dest('resources/script/min'))
         .pipe(notify('JS Vendor ( ' + moment().format('h:mm:ss') + ' )'));
+});
+
+gulp.task('after-js', 'Concat, Uglify JavaScript into a single JS.', function() {
 	gulp.src([
 			'resources/lib/theme-public/js/main.js', 
 			'resources/script/unboxanodeblog.js'
@@ -84,6 +89,16 @@ gulp.task('after-js', 'Concat, Uglify JavaScript into a single JS.', function() 
 	     }))
 	    .pipe(gulp.dest('resources/script/min'))
 	    .pipe(notify('JS Foot ( ' + moment().format('h:mm:ss') + ' )'));
+	gulp.src([
+			'resources/script/unboxanodeblog.*.js'
+		])
+	    .pipe(uglify())
+	    .on('error', notify.onError('Error: <%= error.message %>'))
+	    .pipe(rename({
+	        extname: '.min.js'
+	     }))
+	    .pipe(gulp.dest('resources/script/min'))
+	    .pipe(notify('JS Blog ( ' + moment().format('h:mm:ss') + ' )'));
 });
 
 gulp.task('sass', 'Compile scss into a single css.', function() {
@@ -140,8 +155,8 @@ gulp.task('watch', [], function() {
 		'resources/script/*.js',
 		'resources/lib/**/*.js'
 	], function() {
-		gulp.start('before-js');
 		gulp.start('after-js');
+		//gulp.start('before-js');
 	});
 	watch([
 		'resources/style/*.scss',
@@ -156,7 +171,7 @@ gulp.task('watch', [], function() {
 		'views/projects/*.html'
 	], function() {
 		gulp.start('html-build-public');
-		//gulp.start('html-build-auth');
+		gulp.start('html-build-auth');
 	});
 });
 
