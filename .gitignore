@@ -77,3 +77,4 @@ conf
 /resources/lib/*
 resources/script/min
 views/dist
+resources/style/min

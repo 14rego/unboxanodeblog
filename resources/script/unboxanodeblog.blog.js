@@ -13,11 +13,11 @@ $.ajax({
     beforeSend: function(request) {
         request.setRequestHeader('X-Api-Key', api_key);
     },
-    url: api_url+'/posts'
-}).then(function(data) {
-	var fullList = '';
-	if (data.response.code === 200){
-		posts = data.resource;
+    url: api_url+'/posts',
+	success: function (response) {
+		listPosts(response.resource, 'all');
+	},
+	error: function (xhr, ajaxOptions, thrownError) {
+		listPosts(posts, 'all');
 	}
-	listPosts(posts, 'all');
 });

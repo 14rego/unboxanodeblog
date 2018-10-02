@@ -7,12 +7,14 @@ $.ajax({
     beforeSend: function(request) {
         request.setRequestHeader('X-Api-Key', api_key);
     },
-    url: api_url + api_param
+    url: api_url + api_param,
+    success: function (response) {
+    	listPosts(response.resource, 'all');
+    },
+    error: function (xhr, ajaxOptions, thrownError) {
+    	listPosts(posts, 'all');
+    }
 }).then(function(data) {
-	if (data.response.code === 200){
-		posts = data.resource;
-	}
-	listPosts(posts, 'all');
 	var title = $('.unbox-card-heading').hide().html();
 	$('h1').html(title);
 });

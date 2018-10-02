@@ -70,15 +70,17 @@ var posts = [{
 function listPosts(posts, tag){
 	var fullList = '',
 		postLimit = 15,
-		postCount = 1,
+		postCount = 0,
 		template = $('.blog-fill').html();
 	for (i = (posts.length - 1); i >= 0; i--){
 		var postHasTag = false, // set flag for later
 			tempHTML = template, // get HTML template
-			repUrl = tempHTML.replace('[url]', '/blog/post/'+posts[i].id+'-'+posts[i].title.toLowerCase().replace(/[^0-9a-z-]/g,'-')),
+			repUrl = tempHTML.replace('[url]', '/blog/post/'+posts[i].id+
+				'-'+posts[i].title.toLowerCase().replace(/[^0-9a-z-]/g,'-')),
 			repTitle = repUrl.replace('[title]', posts[i].title),
 			tempDate = new Date(posts[i].created),
-			repDate = repTitle.replace('[date]', months[tempDate.getMonth()]+' '+tempDate.getDay()+', '+tempDate.getFullYear()),
+			repDate = repTitle.replace('[date]', months[tempDate.getMonth()]+
+				' '+tempDate.getDay()+', '+tempDate.getFullYear()),
 			tagArr = posts[i].tags.toString().replace(' ','').split(','),
 			tagString = '',
 			postText = posts[i].body.replace(/<(?:.|\n)*?>/gm, ''),
@@ -99,7 +101,7 @@ function listPosts(posts, tag){
 			}
 		}
 		var repTags = repBody.replace('[tags]', tagString);
-		if (postHasTag == true && postCount <= 15) {
+		if (postHasTag == true && postCount < 15) {
 			fullList += repTags;
 			postCount++;
 		}

@@ -1,4 +1,4 @@
-var api_url = '/api/1.0.0',
+var api_url = 'https://unboxable.com/api/1.0.0',
 	api_key = 'get-your-own',
 	urlParams = new URLSearchParams(window.location.search),
 	qelm = urlParams.get('l'),
