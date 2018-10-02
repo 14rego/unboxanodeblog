@@ -7,6 +7,5 @@
 
 ### Included Technologies ###
 
-* jQuery 1.12.4
-* Twitter Bootstrap 3.3
-* Angular 2
+* jQuery 1.12
+* Twitter Bootstrap 4
