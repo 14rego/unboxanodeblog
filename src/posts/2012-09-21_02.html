@@ -1,0 +1,18 @@
+---
+layout: blog-post.njk
+pageTitle: Rewriting PHP URLs
+date: 2012-09-21 00:00:00
+tags: ['blogpost','development','PHP']
+intro: 'So, that was pretty painful, but I think I&rsquo;m well on my way to getting this mod_rewrite thing figured out. I think the hardest part is understanding the regular expressions and I already had a head start on that, so I didn&rsquo;t have much of an excuse.'
+
+---
+<p>So, that was pretty painful, but I think I&rsquo;m well on my way to getting this mod_rewrite thing figured out. I think the hardest part is understanding the regular expressions and I already had a head start on that, so I didn&rsquo;t have much of an excuse. What I really needed was:</p>
+<ol>
+<li>Find the &ldquo;physical&rdquo; .php page, if it exists</li>
+<li>If the &lsquo;.php&rsquo; extension was left off of the physical file url (if it exists), show the page anyway</li>
+<li>If the physical page does not exist, plug the info into the query page</li>
+<li>Discern which directory the intended &ldquo;imaginary&rdquo; page belongs to so that the proper color scheme can be applied</li>
+<li>Find out if the content is in the database and display it in the template, with the color scheme from above</li>
+</ol>
+
+<p>So, believe it or not, <i>this</i> is where the challenge begins. Now, I&rsquo;d like to get rid of the physical files that I no longer need, but will still need to display the &ldquo;imaginary&rdquo; version, where necessary. So, I need to be able to add the extension to an imaginary file that used to be a physical file. Look, boys and girls - this job is not always fun, but I got it done.</p>

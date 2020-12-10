@@ -1,0 +1,64 @@
+---
+layout: public.njk
+pageTitle: Blog Tag | {{ tag }}
+more: 'The ability to impress you, go beyond your expectations, break a stereotype of any kind, beat the odds, achieve the “impossible”, or otherwise present you with the opposite result as what you expected is fun to me.'
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - blogpost
+permalink: /blog/tag/{{ tag }}/
+---
+<section class="unbox-slider flexslider condensed">
+  <ul class="slides">
+    <li style="background-image: url(/assets/image/hero_space.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-12 text-center">
+            <div class="slides-text unbox-animate">
+              <h1 class="h2">Unboxablog: “{{ tag }}”</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</section>
+<section class="unbox-section">
+	<div class="container">
+		<div class="row blog-fill">
+			<div class="col-12 col-md-10 unbox-animate fadeInUp unbox-animated blog-template">
+				{% set taglist = collections[ tag ] %}
+				{% for post in taglist | reverse %}
+				<div class="unbox-card">
+					<div class="unbox-card-text">
+						<h2 class="unbox-card-heading mb0"><a href="/blog/{{ post.data.date | dateYr }}/{{ post.data.pageTitle | slugify }}/">{{ post.data.pageTitle | safe }}<i class="material-icons">chevron_right</i></a></h2>
+						<p>{{ post.data.intro | safe }}</p>
+						<p><span class="small">{{ post.data.date | dateReadable }}</span> 
+							<span class="tags">
+								{% for t in post.data.tags %}
+									{% if t != 'blogpost' and t != tag %}
+										<a href="/blog/tag/{{ t }}/" class="badge badge-pill badge-secondary">{{ t }}</a>
+									{% endif %}
+								{% endfor %}
+							</span>
+						</p>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</section>
+<section class="unbox-section">
+<div class="container">
+	<div class="unbox-cta unbox-animate border-bottom-none">
+		<h3 class="h2 mb20">You read them all already?</h3>
+		<p>I try to keep up with blogging, but I&rsquo;ve traditionally gone long periods without posting anything. If you have any topics you think I should cover, let me know.</p>
+		<p><a href="/contact" role="button" class="btn btn-primary">Suggestion Box</a></p>
+	</div>
+</div>
+<div class="clearfix visible-sm-block"></div>
+</section>

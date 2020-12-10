@@ -8,10 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://bitbucket.org/14rego/unboxanodeblog.git"
+    "url": "git+https://github.com/14rego/unboxanodeblog.git"
   },
   "keywords": [
     "node",
+    "eleventy",
     "blog",
     "unbox",
     "regan",
@@ -20,24 +21,15 @@
   ],
   "author": "Regan Leah Bourland",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/14rego/unboxanodeblog#readme",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.3",
-    "mysql": "^2.15.0",
-    "node-mysql": "^0.4.2",
-    "scss": "^0.2.4"
-  },
+  "homepage": "https://github.com/14rego/unboxanodeblog#readme",
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.2.0",
-    "gulp-help": "^1.6.1",
-    "gulp-notify": "^3.2.0",
-    "gulp-rename": "^1.3.0",
-    "gulp-sass": "^4.0.1",
-    "gulp-template-html": "^0.2.0",
-    "gulp-uglify": "^3.0.0",
-    "gulp-watch": "^5.0.0",
-    "moment": "^2.22.2"
+    "@11ty/eleventy": "^0.11.1",
+    "eleventy-plugin-link_to": "^0.4.0",
+    "inline-source": "^7.2.0",
+    "moment": "^2.29.1",
+    "terser": "^5.5.1"
+  },
+  "dependencies": {
+    "eleventy-plugin-sass": "^1.1.1"
   }
 }

@@ -1,0 +1,15 @@
+---
+layout: blog-post.njk
+pageTitle: Touch and Gestures in Your Web App
+date: 2012-12-04 00:00:00
+tags: ['blogpost','development','web','app','jQuery','learning']
+intro: 'Recently, I&rsquo;ve been trying to add touch support to a checklist I&rsquo;ve been working on. I was already using jQuery .draggable() and .droppable() for desktop users, but mobile/tablet users had to open each item to change the status.'
+
+---
+<p>Recently, I&rsquo;ve been trying to add touch support to a checklist I&rsquo;ve been working on. I was already using jQuery .draggable() and .droppable() for desktop users, but mobile/tablet users had to open each item to change the status.</p>
+
+<p>My first instinct was the jQuery Mobile library, but even without the CSS, all I really needed was a new set of javascript events. A friend of mine suggested <a href="http://eightmedia.github.com/hammer.js/" target="_blank">Hammer.js</a>, so I began looking into it yesterday. I ran into my first problem while trying to bind the events to elements added to the DOM by an .ajax() function. Although I think I eventually could&rsquo;ve figured it out, Hammer was making it so hard to work with (event propagation and sibling/relationship problems), I decided to try something else.</p>
+
+<p>Enter <a href="http://jgestures.codeplex.com/" target="_blank">jGestures.js</a> - a suggestion from a fellow developer that was also having Hammer issues. jGestures was easy to use: instead of entering options for each event (as long as that&rsquo;s not exactly what you need), you simply bound to one of the easy custom events, and away you went with your function. There were many less parent-child problems, as long as you designated the .bind() within the .ajax() success function. And I loved the easy-to-use events, like swipetwo [swipe with two fingers], swiperight [swipe toward right only, regardless of distance].</p>
+
+<p>The swipetwo event was especially useful as I&rsquo;ve heard a lot of problems with a device differentiating between scrolling and swiping or dragging objects. I loved it and I&rsquo;m sure you will, too. Very happy with my new gesture support.</p>

@@ -1,0 +1,48 @@
+---
+layout: public.njk
+more: 'You can&rsquo;t believe everything you read on the internet.'
+permalink: /blog/{{ page.date | dateYr }}/{{ pageTitle | slugify }}/
+---
+	
+<section class="unbox-slider flexslider condensed">
+  <ul class="slides">
+    <li style="background-image: url(/assets/image/hero_space.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-12 text-center">
+            <div class="slides-text unbox-animate">
+              <p class="h2">Unboxablog</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</section>
+<section class="unbox-section">
+	<div class="container blog-fill">
+		<div class="row blog-template">
+			<div class="col-xs-12 col-md-9 unbox-animate fadeInUp">
+				<div class="unbox-card">
+					<div class="unbox-card-text pt-0">
+						<h1 class="unbox-card-heading mb0">{{ pageTitle | safe }}</h1>
+						<br/>
+						<div>
+							{{ content | safe }}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-3 unbox-animate fadeInUp">
+				<p><em>Posted:</em><br/>{{ date | dateReadable }}</p>
+				<p><em>Tags:</em><br/><span class="tags">
+				{% for t in tags %}
+					{% if t != 'blogpost' %}
+						<a href="/blog/tag/{{ t }}/" class="badge badge-pill badge-secondary">{{ t }}</a>
+					{% endif %}
+				{% endfor %}
+				</span></p>
+			</div>
+		</div>
+	</div>
+</section>
