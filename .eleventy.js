@@ -1,3 +1,4 @@
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSass = require('eleventy-plugin-sass');
 const { minify } = require('terser');
 const moment = require('moment');
@@ -6,6 +7,7 @@ moment.locale('en');
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(require('eleventy-plugin-link_to'));
+  eleventyConfig.addPlugin(pluginRss);
 
   eleventyConfig.addFilter('dateIso', date => {
     return moment(date).toISOString();
