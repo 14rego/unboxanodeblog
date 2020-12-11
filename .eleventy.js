@@ -1,4 +1,4 @@
-const pluginRss = require("@11ty/eleventy-plugin-rss");
+const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSass = require('eleventy-plugin-sass');
 const { minify } = require('terser');
 const moment = require('moment');
@@ -27,8 +27,8 @@ module.exports = function(eleventyConfig) {
       str = str.toLowerCase();
     
       // remove accents, swap ñ for n, etc
-      var from = "àáäâèéëêìíïîòóöôùúüûñç·/_,:;";
-      var to   = "aaaaeeeeiiiioooouuuunc------";
+      var from = 'àáäâèéëêìíïîòóöôùúüûñç·/_,:;';
+      var to   = 'aaaaeeeeiiiioooouuuunc------';
       for (var i=0, l=from.length ; i<l ; i++) {
           str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
       }

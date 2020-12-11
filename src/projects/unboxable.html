@@ -10,7 +10,7 @@ more: 'I’ve moved more times than you can imagine and I’ve lost count. I att
         <div class="row">
           <div class="col-xs-12 col-md-12 text-center">
             <div class="slides-text">
-              <h1 class="h2">Unboxable</h1>
+              <h1 class="h2">Unboxable.com</h1>
               <p>Yes, this very web site!</p>
             </div>
           </div>
@@ -26,10 +26,9 @@ more: 'I’ve moved more times than you can imagine and I’ve lost count. I att
 				<h2 class="hl-primary"><i class="material-icons">keyboard</i> Develop</h2>
 				<h3>Cutting Edge</h3>
 				<p>I can tell you're as excited to hear about all the underlying technology as I am to tell you about it. But there's nothing exceptional about this web site, I'll admit. It's HTML, CSS, and a tiny bit<sup>*</sup> of javascript. And that's the beauty of it to me. What else does it need? Not a thing.</p>
-				<p>While the final product is just a few HTML files, the build process is a bit more robust than you might expect. While developing locally, I rely on Node to serve my files. I also employ Gulp to do things like compile my CSS from SCSS files, lint, concatenate, and minify my JS, and piece together HTML files I build in a very MVC-sort-of style with global page templates and view partials.</p>
+				<p>I've transitioned to using <a href="https://www.11ty.dev/" target="_blank" rel="nofolow">11ty</a>, which is a static site generator based on Node. I had previously cobbled together a string of build scripts, but this is just too simple to pass up.</p>
 				<p>Once the build and compilation is complete, I just serve my HTML files statically on a linux server with Apache mod-rewrite rules for pretty URLs.</p>
-				<p>The blog does, however, rely on an API I created. No way I'm drawing up all 50 of the blog posts in my archive manually. Check out the Unboxapi project <a href="/projects/unboxapi">here</a>.</p>
-				<p>Of course, I have plans to rewrite this site in React immediately after "finishing" it.</p>
+				<p>While I have previously created a working blog API for posts and comments, I've decided not to use it because it's just overkill for the amount of traffic I receive. It's a fun project to do, just unnecessary for my needs. Check out the Unboxapi project <a href="/projects/unboxapi">here</a>.</p>
 				<p class="small">*Let's be honest, even a "tiny bit" is probably overkill in terms of user experience. Do things really need to zoom around and have cool effects? Not really.</p>
 				<hr/>
 				<h2 class="hl-primary"><i class="material-icons">create</i> Create</h2>
@@ -48,10 +47,8 @@ more: 'I’ve moved more times than you can imagine and I’ve lost count. I att
 							<div class="panel-body">
 								<ul>
 									<li>Node/Apache</li>
-									<li>Express</li>
-									<li>Gulp</li>
+									<li><a href="https://www.11ty.dev/" target="_blank" rel="nofolow">11ty</a></li>
 									<li><a href="https://github.com/14rego/unboxanodeblog" target="_blank" rel="nofollow">Git</a></li>
-									<li><a href="/projects/unboxapi">PHP API</a></li>
 								</ul>
 							</div>
 						</div>
