@@ -74,5 +74,6 @@ blog/node_modules
 blog/conf
 conf
 
-src/assets/lib/*
+src/assets/lib/bootstrap-4.1.1/*
+src/assets/lib/theme-public/js/vendor/*
 dist
