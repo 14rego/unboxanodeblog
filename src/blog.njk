@@ -1,6 +1,6 @@
 ---
 layout: public.njk
-pageTitle: Blog
+title: Blog
 more: 'The ability to impress you, go beyond your expectations, break a stereotype of any kind, beat the odds, achieve the “impossible”, or otherwise present you with the opposite result as what you expected is fun to me.'
 pagination:
   data: collections.blogpost
@@ -30,7 +30,7 @@ pagination:
 				{% for post in posts %}
 				<div class="unbox-card">
 					<div class="unbox-card-text">
-						<h2 class="unbox-card-heading mb0"><a href="/blog/{{ post.data.date | dateYr }}/{{ post.data.pageTitle | slugify }}/">{{ post.data.pageTitle | safe }}<i class="material-icons">chevron_right</i></a></h2>
+						<h2 class="unbox-card-heading mb0"><a href="/blog/{{ post.data.date | dateYr }}/{{ post.data.title | slugify }}/">{{ post.data.title | safe }}<i class="material-icons">chevron_right</i></a></h2>
 						<p>{{ post.data.intro | safe }}</p>
 						<p><span class="small">{{ post.data.date | dateReadable }}</span> 
 							<span class="tags">
@@ -52,7 +52,7 @@ pagination:
 <div class="container">
 	<div class="unbox-cta unbox-animate border-bottom-none">
 		<h3 class="h2 mb20">You read them all already?</h3>
-		<p>I try to keep up with blogging, but I&rsquo;ve traditionally gone long periods without posting anything. If you have any topics you think I should cover, let me know.</p>
+		<p>I try to keep up with blogging, but I’ve traditionally gone long periods without posting anything. If you have any topics you think I should cover, let me know.</p>
 		<p><a href="/contact" role="button" class="btn btn-primary">Suggestion Box</a></p>
 	</div>
 </div>

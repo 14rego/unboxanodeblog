@@ -61,7 +61,7 @@ function eraseCookie(name) {
 var posts = [{
     "id": "#TBD",
     "title": "Under Construction",
-    "body": "<p>I&rsquo;m in the process of a data migration from my old blog to this fancy new one. Come back soon?</p>",
+    "body": "<p>I’m in the process of a data migration from my old blog to this fancy new one. Come back soon?</p>",
     "created": "2018-09-10 00:00:00",
     "tags": "data, migration, upgrade",
     "status": "1",

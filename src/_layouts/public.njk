@@ -6,7 +6,7 @@ siteTitle: 'Unboxable.com || Regan Leah Bourland'
 <head profile="http://www.w3.org/2005/10/profile">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>{{ pageTitle }} | {{ siteTitle }}</title>
+	<title>{{ title }} | {{ siteTitle }}</title>
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	
@@ -18,7 +18,7 @@ siteTitle: 'Unboxable.com || Regan Leah Bourland'
 	 
 	<script type="text/javascript" src="/assets/script/unboxanodeblog.header.js"></script>
 </head>
-<body id="{{ pageTitle | slugify }}">
+<body id="{{ title | slugify }}">
 	<div class="unbox-loader"></div>
 	<header role="banner" class="unbox-header">
 		<div class="container">
@@ -77,7 +77,7 @@ siteTitle: 'Unboxable.com || Regan Leah Bourland'
 				{% if more %}
 				<div class="col-xs-12 col-md-6">
 					<div class="unbox-footer-widget">
-						<h4 class="heading">Haven&rsquo;t learned enough?</h4>
+						<h4 class="heading">Haven’t learned enough?</h4>
 						<p>{{ more | safe }}</p>
 					</div> 
 				</div>
@@ -87,7 +87,7 @@ siteTitle: 'Unboxable.com || Regan Leah Bourland'
 			<div class="row copyright">
 				<div class="col-xs-12 col-md-8">
 					<div class="unbox-footer-widget">
-						<p class="small">&copy; 2021 Regan Leah Bourland. All right reserved. The ideas on this site are my own and do not necessarily represent the opinions or positions of any groups I may be affiliated with. A word on <a href="{% link_to 'privacy' %}" target="_blank">your privacy</a> while you&rsquo;re&nbsp;here.</p>
+						<p class="small">&copy; 2021 Regan Leah Bourland. All right reserved. The ideas on this site are my own and do not necessarily represent the opinions or positions of any groups I may be affiliated with. A word on <a href="{% link_to 'privacy' %}" target="_blank">your privacy</a> while you’re&nbsp;here.</p>
 					</div>
 				</div>
 				<div class="col-xs-12 col-md-4">

@@ -1,7 +1,7 @@
 ---
 layout: public.njk
-more: 'You can&rsquo;t believe everything you read on the internet.'
-permalink: /blog/{{ page.date | dateYr }}/{{ pageTitle | slugify }}/
+more: 'You can’t believe everything you read on the internet.'
+permalink: /blog/{{ page.date | dateYr }}/{{ title | slugify }}/
 ---
 	
 <section class="unbox-slider flexslider condensed">
@@ -25,7 +25,7 @@ permalink: /blog/{{ page.date | dateYr }}/{{ pageTitle | slugify }}/
 			<div class="col-xs-12 col-md-9 unbox-animate fadeInUp">
 				<div class="unbox-card">
 					<div class="unbox-card-text pt-0">
-						<h1 class="unbox-card-heading mb0">{{ pageTitle | safe }}</h1>
+						<h1 class="unbox-card-heading mb0">{{ title | safe }}</h1>
 						<br/>
 						<div>
 							{{ content | safe }}
