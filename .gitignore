@@ -77,3 +77,5 @@ conf
 src/assets/lib/bootstrap-4.1.1/*
 src/assets/lib/theme-public/js/vendor/*
 dist
+
+src/_data/keys.js
