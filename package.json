@@ -26,7 +26,7 @@
     "@11ty/eleventy-plugin-rss": "^1.0.9",
     "eleventy-plugin-link_to": "^0.4.0",
     "inline-source": "^7.2.0",
-    "moment": "^2.29.1",
+    "moment": "^2.29.4",
     "terser": "^5.5.1"
   },
   "dependencies": {
