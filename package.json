@@ -22,7 +22,7 @@
   "license": "ISC",
   "homepage": "https://github.com/14rego/unboxanodeblog#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy": "^1.0.2",
     "@11ty/eleventy-plugin-rss": "^1.0.9",
     "eleventy-plugin-link_to": "^0.4.0",
     "inline-source": "^7.2.0",
