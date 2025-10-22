@@ -79,3 +79,4 @@ src/assets/lib/theme-public/js/vendor/*
 dist
 
 src/_data/keys.js
+/.vscode

@@ -1,9 +1,12 @@
 {
   "name": "unboxanodeblog",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "description": "Node Blog for Regan Bourland",
   "main": "app.js",
+  "type": "module",
   "scripts": {
+    "serve": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,21 +18,18 @@
     "eleventy",
     "blog",
     "regan",
-    "leah",
     "bourland"
   ],
-  "author": "Regan Leah Bourland",
+  "author": "Regan Bourland",
   "license": "ISC",
   "homepage": "https://github.com/14rego/unboxanodeblog#readme",
-  "devDependencies": {
-    "@11ty/eleventy": "^0.11.1",
-    "@11ty/eleventy-plugin-rss": "^1.0.9",
-    "eleventy-plugin-link_to": "^0.4.0",
-    "inline-source": "^7.2.0",
-    "moment": "^2.29.1",
-    "terser": "^5.5.1"
-  },
   "dependencies": {
-    "eleventy-plugin-sass": "^1.1.1"
+    "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy-plugin-rss": "^2.0.4",
+    "eleventy-plugin-link_to": "^0.4.1",
+    "inline-source": "^8.0.3",
+    "moment": "^2.30.1",
+    "sass": "^1.93.2",
+    "terser": "^5.44.0"
   }
 }

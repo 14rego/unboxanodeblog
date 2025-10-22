@@ -3,13 +3,13 @@
   "permalink": "blog/feed.xml",
   "eleventyExcludeFromCollections": true,
   "metadata": {
-    "title": "regan.bour.land",
+    "title": "rbourland",
     "subtitle": "A technology blog",
-    "url": "https://regan.bour.land/blog/",
-    "feedUrl": "https://regan.bour.land/blog/feed/",
+    "url": "https://rbourland.us-3.evennode.com/blog/",
+    "feedUrl": "https://rbourland.us-3.evennode.com/blog/feed/",
     "author": {
       "name": "Regan Bourland",
-      "email": "regan.leah@gmail.com"
+      "email": "regan.bourland@gmail.com"
     }
   }
 }
@@ -20,7 +20,7 @@
   <subtitle>{{ metadata.subtitle }}</subtitle>
   <link href="{{ metadata.feedUrl }}" rel="self"/>
   <link href="{{ metadata.url }}"/>
-  <updated>{{ collections.blogpost | rssLastUpdatedDate }}</updated>
+  <updated>{{ collections.blogpost | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ metadata.url }}</id>
   <author>
     <name>{{ metadata.author.name }}</name>
@@ -31,7 +31,7 @@
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>
-    <updated>{{ post.date | rssDate }}</updated>
+    <updated>{{ post.date | dateToRfc3339 }}</updated>
     <id>{{ absolutePostUrl }}</id>
     <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
   </entry>
