@@ -1,9 +1,0 @@
----
-layout: blog-post.njk
-title: jQuery Selectors and Browser Compatibility
-date: 2014-08-17 17:13:00
-tags: ['blogpost','jQuery','development','selectors','css']
-intro: 'I was recently working on a web site that I needed to use pseudo-selectors in jQuery. I don’t usually use a lot of pseudo-selectors because I almost always have to allow full IE8 compatibility.'
----
-<p>I was recently working on a web site that I needed to use pseudo-selectors in jQuery. I don’t usually use a lot of pseudo-selectors because I almost always have to allow full IE8 compatibility. But it suddenly occurred to me to ask the question, &ldquo;Just because I can’t use pseudo-selectors in my CSS, does that necessarily mean that I can’t use them at all?&rdquo;</p>
-<p>The answer is no. As this <a href="http://jquery.com/browser-support/" target="_blank">jQuery Browser Support</a> page outlines, as long as you’re not using the <code>.css()</code> method to change your CSS, you can use all the pseudo-selectors in your <code>$('.selectors:nth-child(0)')</code> as you wish! I learned something today. I hope you did, too.</p>

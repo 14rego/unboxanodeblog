@@ -1,37 +1,47 @@
-import pluginRss from "@11ty/eleventy-plugin-rss";
 import { minify } from "terser";
 import moment from "moment";
 import link_to from "eleventy-plugin-link_to";
-import path from "node:path";
-import * as sass from "sass";
+import fs from "fs";
+import path from "path";
+import cssnano from "cssnano";
+import postcss from "postcss";
+import tailwindcss from "@tailwindcss/postcss";
 
 moment.locale("en");
 
-export default function (eleventyConfig) {
-  
+export default function (eleventyConfig) {  
   eleventyConfig.setInputDirectory("src");
   //eleventyConfig.setIncludesDirectory("_includes"); // default
   //eleventyConfig.setDataDirectory("_data"); // default
   eleventyConfig.setLayoutsDirectory("_layouts");
   eleventyConfig.setOutputDirectory("dist");
 
+  eleventyConfig.on("eleventy.before", async () => {
+    const tailwindInputPath = path.resolve("./src/assets/style/unboxanodeblog.css");
+    const tailwindOutputPath = "./dist/assets/style/unboxanodeblog.css";
+    const cssContent = fs.readFileSync(tailwindInputPath, "utf8");
+    const outputDir = path.dirname(tailwindOutputPath);
+    if (!fs.existsSync(outputDir)) {
+      fs.mkdirSync(outputDir, { recursive: true });
+    }
+    const result = await processor.process(cssContent, {
+      from: tailwindInputPath,
+      to: tailwindOutputPath,
+    });
+    fs.writeFileSync(tailwindOutputPath, result.css);
+  });
+
+  const processor = postcss([
+    tailwindcss(),
+    cssnano({
+      preset: "default",
+    }),
+  ]);
+
   eleventyConfig.addPassthroughCopy("src/assets/script");
   eleventyConfig.addPassthroughCopy("src/assets/image");
 
   eleventyConfig.addPlugin(link_to);
-  eleventyConfig.addPlugin(pluginRss);
-
-  eleventyConfig.addFilter("dateIso", date => {
-    return moment(date).toISOString();
-  });
-
-  eleventyConfig.addFilter("dateReadable", date => {
-    return moment(date).utc().format("LL"); // E.g. May 31, 2019
-  });
-
-  eleventyConfig.addFilter("dateYr", date => {
-    return moment(date).utc().format("Y"); // E.g. 2019
-  });
 
   eleventyConfig.addFilter("slugify", str => {
     if (str){
@@ -65,34 +75,4 @@ export default function (eleventyConfig) {
       callback(null, code);
     }
   });
-  
-  eleventyConfig.addExtension("scss", {
-		outputFileExtension: "css",
-
-		// opt-out of Eleventy Layouts
-		//useLayouts: false,
-
-		compile: async function (inputContent, inputPath) {
-			let parsed = path.parse(inputPath);
-
-      if(parsed.name.startsWith("_") || parsed.dir.includes("node_modules")) {
-				return;
-			}
-
-			let result = sass.compileString(inputContent, {
-				loadPaths: [
-					parsed.dir || ".",
-					this.config.dir.includes,
-				]
-			});
-
-			// Map dependencies for incremental builds
-			this.addDependencies(inputPath, result.loadedUrls);
-
-			return async (data) => {
-				return result.css;
-			};
-		},
-	});
-  eleventyConfig.addTemplateFormats("scss")
 };
