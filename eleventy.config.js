@@ -15,7 +15,7 @@ export default function (eleventyConfig) {
 
   eleventyConfig.on("eleventy.before", async () => {
     const tailwindInputPath = path.resolve("./src/assets/style/unboxanodeblog.css");
-    const tailwindOutputPath = "./dist/assets/style/unboxanodeblog.css";
+    const tailwindOutputPath = "./docs/assets/style/unboxanodeblog.css";
     const cssContent = fs.readFileSync(tailwindInputPath, "utf8");
     const outputDir = path.dirname(tailwindOutputPath);
     if (!fs.existsSync(outputDir)) {
