@@ -23,11 +23,10 @@
   "author": "Regan Bourland",
   "license": "ISC",
   "homepage": "https://github.com/14rego/unboxanodeblog#readme",
-  "dependencies": {
-  },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
     "@tailwindcss/postcss": "^4.1.15",
+    "baseline-browser-mapping": "^2.9.11",
     "cssnano": "^7.1.1",
     "eleventy-plugin-link_to": "^0.4.1",
     "inline-source": "^8.0.3",
