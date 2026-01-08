@@ -1,5 +1,4 @@
 import { minify } from "terser";
-import moment from "moment";
 import link_to from "eleventy-plugin-link_to";
 import fs from "fs";
 import path from "path";
@@ -7,14 +6,12 @@ import cssnano from "cssnano";
 import postcss from "postcss";
 import tailwindcss from "@tailwindcss/postcss";
 
-moment.locale("en");
-
 export default function (eleventyConfig) {  
   eleventyConfig.setInputDirectory("src");
   //eleventyConfig.setIncludesDirectory("_includes"); // default
   //eleventyConfig.setDataDirectory("_data"); // default
   eleventyConfig.setLayoutsDirectory("_layouts");
-  eleventyConfig.setOutputDirectory("dist");
+  eleventyConfig.setOutputDirectory("docs");
 
   eleventyConfig.on("eleventy.before", async () => {
     const tailwindInputPath = path.resolve("./src/assets/style/unboxanodeblog.css");
