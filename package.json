@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "serve": "npx eleventy --serve",
-    "build": "npx eleventy"
+    "build": "NODE_ENV=production npx eleventy"
   },
   "repository": {
     "type": "git",

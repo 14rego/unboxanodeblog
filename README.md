@@ -11,5 +11,5 @@
 
 #### Development
 
-* `npx eleventy` or `npm run build`
+* `NODE_ENV=production npx eleventy` or `npm run build`
 * `npx eleventy --serve` or `npm run serve`
