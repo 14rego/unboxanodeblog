@@ -1,0 +1,53 @@
+---
+layout: public.njk
+title: Projects => Vue Wizard
+more: 'At this point, I lived in Kansas City longer than I lived anywhere else.'
+---
+<section class="!bg-cover w-full flex md:p-2 !pt-[2.75rem]" style="background: url('{{ '/assets/image/hero_space.jpg' | htmlBaseUrl }}') no-repeat center center">
+    <div class="mx-auto p-5 md:my-4 md:bg-teal-900/50 md:rounded-lg">
+        <h1 class="text-xl font-bold text-orange-400 text-center">Vue Wizard</h1>
+        <p class="text-white text-center text-sm">A few wizard helper views</p>
+    </div>
+</section>
+<div class="max-w-2xl mx-auto p-5 md:my-1">
+    <div class="mb-5 grid grid-cols-4 gap-4">
+        <section class="col-span-4 md:col-span-3">
+            <h2 class="text-lg font-bold text-orange-400 mb-2"><span class="bg-orange-600 text-white rounded-full p-1"><i class="fas fa-bolt-lightning" aria-hidden="true"></i></span> The Big Idea</h2>
+            <p class="text-white">We have several processes where our call center users go through a series of form steps to complete a task. This project includes a full Road Map that shows the user&rsquo;s progress, a more succinct Progress Bar, and a Form Step container that allows navigation and expanding/collapsing the individual steps.</p>
+        </section>
+        <aside class="col-span-4 md:col-span-1">
+            <h3 class="text-orange-400 mb-2">Stack:</h3>
+            <ul class="text-white text-sm list-disc ml-5 grid grid-cols-2 md:grid-cols-1">
+                <li>Vue</li>
+                <li>Typescript</li>
+                <li>Lucide Icons</li>
+                <li>TailwindCSS</li>
+                <li><a href="https://github.com/14rego/vue-wizard" target="_blank" rel="nofollow" class="text-orange-200 hover:underline hover:text-orange-400">Git Repo</a></li>
+            </ul>
+        </aside>
+    </div>
+    <section>
+        <div class="my-4">
+            <h3 class="text-orange-400 mb-2"><span class="bg-orange-600 text-white rounded-full p-1"><i class="fas fa-code" aria-hidden="true"></i></span> Development</h3>
+            <p class="text-lg text-teal-200">No Brainer</p>
+            <p class="text-white mb-2 text-sm">Making a set of wizard components was a necessity for some of our longer forms, like when our call center employees need to take an order over the phone. They need it broken down into digestible and easy to navigate steps.</p>
+        </div>
+        <div class="my-4">
+            <h3 class="text-orange-400 mb-2"><span class="bg-orange-600 text-white rounded-full p-1"><i class="fas fa-magnifying-glass-chart" aria-hidden="true"></i></span> Strategy</h3>
+            <p class="text-lg text-teal-200">Pretty Straightforward</p>
+            <p class="text-white mb-2 text-sm">These components were designed to be easy to pop into our processes so that the user always knows where they are in the process and how much is left before they&rsquo;re done.</p>
+        </div>
+        <div class="my-4">
+            <h3 class="text-orange-400 mb-2"><span class="bg-orange-600 text-white rounded-full p-1"><i class="fas fa-pen-ruler" aria-hidden="true"></i></span> Creativity</h3>
+            <p class="text-lg text-teal-200">Usability and Accessibility First</p>
+            <p class="text-white mb-2 text-sm">Everything is designed with a focus on providing a great user experience, ensuring that the components are easy to use and accessible to all users.</p>
+        </div>
+    </section>
+</div>
+<aside class="bg-teal-800 w-full">
+    <div class="max-w-2xl mx-auto pt-3 pb-4 px-5 text-center">
+        <h3 class="font-bold text-teal-100">Questions or comments?</h3>
+        <p class="text-white text-sm">Feel free to reach out! I appreciate constructive feedback and enjoy getting into&nbsp;the&nbsp;weeds.</p>
+        <p class="mt-2"><a href="{% link_to 'contact' %}" class="border-2 border-teal-100 bg-teal-100 hover:bg-teal-400 hover:border-teal-100 rounded-md px-2 py-1 text-sm text-teal-800">Hit Me Up</a></p>
+    </div>
+</aside>

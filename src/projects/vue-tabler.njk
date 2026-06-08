@@ -1,0 +1,48 @@
+---
+layout: public.njk
+title: Projects => Vue Tabler
+more: 'I’m actually a Colorado native. I’m VERY excited to be home.'
+---
+<section class="!bg-cover w-full flex md:p-2 !pt-[2.75rem]" style="background: url('{{ '/assets/image/hero_space.jpg' | htmlBaseUrl }}') no-repeat center center">
+    <div class="mx-auto p-5 md:my-4 md:bg-teal-900/50 md:rounded-lg">
+        <h1 class="text-xl font-bold text-orange-400 text-center">Vue Tabler</h1>
+        <p class="text-white text-center text-sm">A Customized Table Library</p>
+    </div>
+</section>
+<div class="max-w-2xl mx-auto p-5 md:my-1">
+    <div class="mb-5 grid grid-cols-4 gap-4">
+        <section class="col-span-4 md:col-span-3">
+            <h2 class="text-lg font-bold text-orange-400 mb-2"><span class="bg-orange-600 text-white rounded-full p-1"><i class="fas fa-bolt-lightning" aria-hidden="true"></i></span> The Big Idea</h2>
+            <p class="text-white">We had been using a tabling library called Tabulator for dozens of views in our Vue applications. But it had unresolved issues and we really needed custom functionality. So - one by one - I replaced each table with a custom solution.</p>
+        </section>
+        <aside class="col-span-4 md:col-span-1">
+            <h3 class="text-orange-400 mb-2">Stack:</h3>
+            <ul class="text-white text-sm list-disc ml-5 grid grid-cols-2 md:grid-cols-1">
+                <li>Vue</li>
+                <li>Typescript</li>
+                <li>Lucide Icons</li>
+                <li>TailwindCSS</li>
+                <li><a href="https://github.com/14rego/vue-tabler" target="_blank" rel="nofollow" class="text-orange-200 hover:underline hover:text-orange-400">Git Repo</a></li>
+            </ul>
+        </aside>
+    </div>
+    <section>
+        <div class="my-4">
+            <h3 class="text-orange-400 mb-2"><span class="bg-orange-600 text-white rounded-full p-1"><i class="fas fa-code" aria-hidden="true"></i></span> Development</h3>
+            <p class="text-lg text-teal-200">Polished</p>
+            <p class="text-white mb-2 text-sm">It was incredibly rewarding to build something from the ground up. On top of automatic tables, it also supports custom, non-table row rendering and event handling.</p>
+        </div>
+        <div class="my-4">
+            <h3 class="text-orange-400 mb-2"><span class="bg-orange-600 text-white rounded-full p-1"><i class="fas fa-magnifying-glass-chart" aria-hidden="true"></i></span> Strategy</h3>
+            <p class="text-lg text-teal-200">A Beast</p>
+            <p class="text-white mb-2 text-sm">While it is incredibly powerful, it definitely requires the proper configuration to be fully utilized. I'll be sure to document the best practices for using it effectively, but I think it showcases the potential of a well-designed custom solution.</p>
+        </div>
+    </section>
+</div>
+<aside class="bg-teal-800 w-full">
+    <div class="max-w-2xl mx-auto pt-3 pb-4 px-5 text-center">
+        <h3 class="font-bold text-teal-100">Questions or comments?</h3>
+        <p class="text-white text-sm">Feel free to reach out! I appreciate constructive feedback and enjoy getting into&nbsp;the&nbsp;weeds.</p>
+        <p class="mt-2"><a href="{% link_to 'contact' %}" class="border-2 border-teal-100 bg-teal-100 hover:bg-teal-400 hover:border-teal-100 rounded-md px-2 py-1 text-sm text-teal-800">Hit Me Up</a></p>
+    </div>
+</aside>
