@@ -12,11 +12,11 @@ export default function (eleventyConfig) {
   //eleventyConfig.setIncludesDirectory("_includes"); // default
   //eleventyConfig.setDataDirectory("_data"); // default
   eleventyConfig.setLayoutsDirectory("_layouts");
-  eleventyConfig.setOutputDirectory("docs/unboxanodeblog");
+  eleventyConfig.setOutputDirectory("docs");
 
   eleventyConfig.on("eleventy.before", async () => {
     const tailwindInputPath = path.resolve("./src/assets/style/unboxanodeblog.css");
-    const tailwindOutputPath = "./docs/unboxanodeblog/assets/style/unboxanodeblog.css";
+    const tailwindOutputPath = "./docs/assets/style/unboxanodeblog.css";
     const cssContent = fs.readFileSync(tailwindInputPath, "utf8");
     const outputDir = path.dirname(tailwindOutputPath);
     if (!fs.existsSync(outputDir)) {
