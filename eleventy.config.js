@@ -1,4 +1,5 @@
 import { minify } from "terser";
+import { HtmlBasePlugin } from "@11ty/eleventy";
 import link_to from "eleventy-plugin-link_to";
 import fs from "fs";
 import path from "path";
@@ -11,11 +12,11 @@ export default function (eleventyConfig) {
   //eleventyConfig.setIncludesDirectory("_includes"); // default
   //eleventyConfig.setDataDirectory("_data"); // default
   eleventyConfig.setLayoutsDirectory("_layouts");
-  eleventyConfig.setOutputDirectory("docs");
+  eleventyConfig.setOutputDirectory("docs/unboxanodeblog");
 
   eleventyConfig.on("eleventy.before", async () => {
     const tailwindInputPath = path.resolve("./src/assets/style/unboxanodeblog.css");
-    const tailwindOutputPath = "./docs/assets/style/unboxanodeblog.css";
+    const tailwindOutputPath = "./docs/unboxanodeblog/assets/style/unboxanodeblog.css";
     const cssContent = fs.readFileSync(tailwindInputPath, "utf8");
     const outputDir = path.dirname(tailwindOutputPath);
     if (!fs.existsSync(outputDir)) {
@@ -39,6 +40,10 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/image");
 
   eleventyConfig.addPlugin(link_to);
+
+  eleventyConfig.addPlugin(HtmlBasePlugin, {
+    baseHref: "/unboxanodeblog/",
+  });
 
   eleventyConfig.addFilter("slugify", str => {
     if (str){
